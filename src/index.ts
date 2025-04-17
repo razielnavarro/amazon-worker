@@ -37,13 +37,14 @@ export default {
       // 4. If not signed in, do login + save cookies
       if (!signedIn) {
         console.log('🔓 Logging in…');
+		await page.waitForSelector('#nav-link-accountList');
         await page.click('#nav-link-accountList');
         await page.waitForSelector('#ap_email');
-        await page.type('#ap_email', 'you@example.com', { delay: 150 });
+        await page.type('#ap_email', env.AMAZON_EMAIL, { delay: 150 });
         await page.keyboard.press('Enter');
 
         await page.waitForSelector('#ap_password');
-        await page.type('#ap_password', 'YourP@ssw0rd', { delay: 150 });
+        await page.type('#ap_password', env.AMAZON_PASSWORD, { delay: 150 });
         await page.keyboard.press('Enter');
 
         // wait for the greeting to appear
