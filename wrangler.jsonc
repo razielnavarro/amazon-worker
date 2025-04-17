@@ -9,7 +9,16 @@
 	"compatibility_date": "2025-04-16",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"browser": {
+		"binding": "MYBROWSER"
+	},
+	"kv_namespaces": [
+		{
+		  "binding": "AMAZON_COOKIES",
+		  "id": "0c44548d0a62450dafd35cf6751a4615"
+		}
+	  ]
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -45,3 +54,4 @@
 	 */
 	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
 }
+
